@@ -1,13 +1,11 @@
-
-
 const express = require('express');
-const customerModel = require('./api/model/product_model')
+const customerModel = require('../model/customer_model')
 
 const router = express();
 
-router.get('/',   (req, res, next) => {
+router.get('/', (req, res, next) => {
     try {
-        const result =   customerModel.create({ name: "ashish ojha", email: "dchaudhary89@gmail.com" }).then(result => {
+        const result = customerModel.create({ name: req.body.name, email: req.body.email }).then(result => {
             res.status(200).json({ message: result });
         });
         // res.status(200).json({ message: result });

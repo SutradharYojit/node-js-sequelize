@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
-const demoroute= require('./demo')
+const addCustomerRoute= require('./api/routes/add_customer_route')
 // show that which type of data in coming from body
 app.use(morgan('dev'));// 1 middleware
 
@@ -11,7 +11,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 console.log("Starting");
 
-app.get('/',demoroute );
-
+app.use('/demo',addCustomerRoute );
 
 module.exports = app;
