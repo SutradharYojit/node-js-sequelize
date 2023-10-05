@@ -88,9 +88,20 @@ const Tweet = sequelize.define('Tweets', {
 
 
 
-User.hasOne(ContactInfo);// This show that User table is sharing the Users Id with contact info
+User.hasOne(ContactInfo, {
+    foriegnKey: {
+        allowNull: false
+    }
+});// This show that User table is sharing the Users Id with contact info
 ContactInfo.belongsTo(User); // this show that COntact info is belongs to user table
+
+User.hasOne(Tweet, {
+    foriegnKey: {
+        allowNull: false
+    }
+})
+Tweet.belongsTo(User);    
 
 sequelize.sync();
 
-module.exports = {Customer,User,ContactInfo,Tweet};
+module.exports = { Customer, User, ContactInfo, Tweet };

@@ -1,5 +1,5 @@
 const express = require('express');
-const userModel = require('../model/customer_model')
+const userModel = require('../model/sq_data_model')
 const router = express();
 
 // Add Users to database
@@ -24,6 +24,5 @@ router.post('/adduser', (req, res, next) => {
         return res.status(500).json({ message: "Insertion failed", error: err });
     }
 });
-
 
 module.exports = router;

@@ -1,5 +1,5 @@
 const express = require('express');
-const userModel = require('../model/customer_model')
+const userModel = require('../model/sq_data_model')
 const router = express();
 
 // Add cutomer to database
