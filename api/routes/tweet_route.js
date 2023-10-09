@@ -10,7 +10,6 @@ router.post('/createTweet', async(req, res, next) => {
         }).catch((error) => {
             return res.status(404).json({ status: false, message: "Failed", data: error.message });
         });
-
 });
 
 

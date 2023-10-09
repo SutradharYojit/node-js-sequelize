@@ -17,7 +17,6 @@ router.post('/adduser', (req, res, next) => {
             }).then(result2 => {
                 return res.status(200).json({ user: result1, contact: result2, sucess: true });
             })
-
         });
     } catch (err) {
         console.error("Error inserting data:", err);

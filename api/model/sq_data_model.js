@@ -102,6 +102,9 @@ User.hasOne(Tweet, {
 })
 Tweet.belongsTo(User);    
 
-sequelize.sync();
+User.belongsToMany(User,{as: "User",foreignKey:"UserId",through:"Follow"});
+User.belongsToMany(User,{as: "Followed",foreignKey:"follwerId",through:"Follow"});
+
+sequelize.sync();  
 
 module.exports = { Customer, User, ContactInfo, Tweet };
